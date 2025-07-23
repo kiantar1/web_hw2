@@ -1,0 +1,301 @@
+/* Main container */
+.drawing-app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Header styling */
+.header {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.painting-name {
+  background: none;
+  border: 1px solid #555;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.painting-name:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.import-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.export-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Main content area */
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 200px;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+/* Color selector */
+.color-selector {
+  margin-bottom: 30px;
+}
+
+.color-selector h4 {
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+.color-options {
+  display: flex;
+  gap: 10px;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.color-option.selected {
+  border-color: #333;
+  transform: scale(1.1);
+}
+
+/* Shape list styling */
+.shape-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.shape-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: grab;
+  background-color: #f9f9f9;
+}
+
+.shape-item:hover {
+  background-color: #e9e9e9;
+}
+
+.shape-item:active {
+  cursor: grabbing;
+}
+
+/* Instructions section */
+.instructions {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f0f8ff;
+  border: 1px solid #b3d9ff;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.instructions p {
+  margin: 0;
+  color: #2c5aa0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Individual shape styling */
+.shape {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.shape.circle {
+  border-radius: 50%;
+}
+
+.shape.triangle {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid;
+}
+
+.shape.trapezoid {
+  width: 20px;
+  height: 0;
+  background-color: transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 30px solid;
+}
+
+/* Canvas styling */
+.canvas {
+  flex: 1;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  border: 2px dashed #ddd;
+  margin: 20px;
+}
+
+.canvas:hover {
+  border-color: #007bff;
+}
+
+/* Canvas placeholder */
+.canvas-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #999;
+}
+
+.canvas-placeholder p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.canvas-placeholder .hint {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Footer styling */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+}
+
+.shape-counts {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.count-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.count-item span {
+  font-size: 14px;
+}
+
+/* Shape icons in footer */
+.shape-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.square-icon {
+  background-color: #ccc;
+}
+
+.circle-icon {
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.triangle-icon {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #ccc;
+}
+
+.trapezoid-icon {
+  width: 14px;
+  height: 0;
+  background-color: transparent;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 20px solid #ccc;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+  
+  .shape-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .color-options {
+    justify-content: center;
+  }
+  
+  .shape-counts {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
