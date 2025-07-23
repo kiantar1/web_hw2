@@ -31,14 +31,10 @@
 
 ## ساختار فایل‌ها
 
-<div dir="ltr">
-
 src/
 ├── DrawingApp.js       # کامپوننت اصلی برنامه
 ├── DrawingApp.css      # استایل 
 └── index.js         
-
-</div>
 
 ## تکنولوژی‌های استفاده شده
 
